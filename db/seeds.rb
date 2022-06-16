@@ -12,7 +12,7 @@ Movie.destroy_all
 Genre.destroy_all
 Director.destroy_all
 
-Movie.create([
+Movie.create!([
   {title: 'The Godfather', year: '1972'},
   {title: 'The Godfather: Part II', year: '1974'},
   {title: 'The Godfather: Part III', year: '1990'},
@@ -25,7 +25,7 @@ Movie.create([
   {title: 'Paranormal Activity', year: '2007'}
 ])
 
-Genre.create([
+Genre.create!([
   {name: 'Crime/Drama'},
   {name: 'Action/Comedy'},
   {name: 'Crime/Thriller'},
@@ -33,7 +33,7 @@ Genre.create([
   {name: 'Horror'}
 ])
 
-Director.create([
+Director.create!([
   {name: 'Francis Coppolla'},
   {name: 'Brett Ratner'},
   {name: 'Antonie Fuqua'},
