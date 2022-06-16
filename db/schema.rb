@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_16_091302) do
+ActiveRecord::Schema.define(version: 2022_06_16_095433) do
 
   create_table "directors", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "directors_genres", id: false, force: :cascade do |t|
+    t.integer "director_id", null: false
+    t.integer "genre_id", null: false
+    t.index ["director_id"], name: "index_directors_genres_on_director_id"
+    t.index ["genre_id"], name: "index_directors_genres_on_genre_id"
   end
 
   create_table "genres", force: :cascade do |t|
