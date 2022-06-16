@@ -6,3 +6,9 @@
       
   <strong>Year:</strong>
     <%= @movie.year %></p>
+
+<%= @movie_director.includes(:name) %>
+
+<% @movie_director.each do |mov_dir| %>
+  <%= mov_dir.name %>
+<% end %>
