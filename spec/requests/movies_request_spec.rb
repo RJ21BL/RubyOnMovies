@@ -3,7 +3,7 @@ require 'rails_helper'
 require 'spec_helper'
 
 describe 'Movies', type: :request do
-  it 'requests list of all movies' do
+  it 'sends a get request to the root route' do
     get '/'
     expect(response).to be_successful
   end
