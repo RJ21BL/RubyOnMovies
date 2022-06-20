@@ -1,14 +1,11 @@
 <h1>Movie list</h1>
-  <strong>Title:</strong>
-    <%= @movie.title %>
 
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      
-  <strong>Year:</strong>
-    <%= @movie.year %></p>
 
-<%= @movie_director.includes(:name) %>
 
-<% @movie_director.each do |mov_dir| %>
-  <%= mov_dir.name %>
-<% end %>
+  <strong>Title:</strong> <%= @movie.title %>
+  </br>
+  <strong>Year:</strong> <%= @movie.year %>
+  </br>
+  <strong>Director:</strong> <%= @movie %>
+  </br>
+  <strong>Genre:</strong> <%= @movie.genre %>

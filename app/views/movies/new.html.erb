@@ -1,0 +1,11 @@
+<h1>Add Movies</h1>
+
+<%= form_for @movie do |form| %>
+  <%= form.label('Title') %>
+  <%= form.text_field(:title) %>
+    <p>
+  <%= form.label('Year') %>
+  <%= form.text_field(:year) %>
+    <p>
+  <%= form.submit('Add Movie')%>
+<% end %> 
