@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2022_06_16_214629) do
-
   create_table "directors", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
