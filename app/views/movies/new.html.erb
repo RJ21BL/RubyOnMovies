@@ -7,5 +7,10 @@
   <%= form.label('Year') %>
   <%= form.text_field(:year) %>
     <p>
-  <%= form.submit('Add Movie')%>
+  <%= fields_for :director do |form|%>
+    <%= form.label('Director') %>
+    <%= form.text_field(:name) %>
+      <p>
+    <%= form.submit('Add Movie')%>
+  <% end %> 
 <% end %> 

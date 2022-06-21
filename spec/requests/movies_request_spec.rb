@@ -7,4 +7,16 @@ describe 'Movies', type: :request do
     get '/'
     expect(response).to be_successful
   end
+
+  it 'creates a new movie' do
+    get '/movies/new'
+    assert_response :success
+
+    post '/movies', params: { 
+      movie: {title: 'James Bond', year: 2002} 
+    }
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+  end
 end
