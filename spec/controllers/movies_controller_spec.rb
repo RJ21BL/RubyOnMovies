@@ -15,18 +15,13 @@ describe MoviesController do
     end
   end
 
-  describe '#new' do
-    it 'creates a new movie' do
+  describe '#create' do
+    it 'builds and saves a new movie' do
     end
   end
 
   describe '#new' do
-    it 'saves the new movie in the database' do
-    end
-  end
-
-  describe '#new' do
-    it 'creates a new movie' do
+    it 'redirect' do
     end
   end
 
