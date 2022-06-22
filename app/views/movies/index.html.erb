@@ -3,9 +3,9 @@
   <%= movie.id %>
   <%= link_to movie.title, movie %>
   <%= movie.year %>
-    <p>
+    </br>
   <strong><%= link_to 'DELETE', movie, method: :delete  %> </strong>
-    <p>
+    </br>
   <strong><%= link_to 'EDIT', edit_movie_path(movie) %></strong>
     <p>
 <% end %>
