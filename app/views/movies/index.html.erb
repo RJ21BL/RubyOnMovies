@@ -1,8 +1,13 @@
 <h1>Movies</h1>
 <% @movies.each do |movie| %>
-  <h2><%= link_to movie.title, movie %></h2>
-<%= movie.year %>
-  <h2><%= link_to 'Edit', edit_movie_path(movie) %>
-  <h2><%= link_to 'Delete', movie, method: :delete %>
+  <%= movie.id %>
+  <%= link_to movie.title, movie %>
+  <%= movie.year %>
+    <p>
+  <strong><%= link_to 'DELETE', movie, method: :delete  %> </strong>
+    <p>
+  <strong><%= link_to 'EDIT', edit_movie_path(movie) %></strong>
+    <p>
 <% end %>
-  <p><%= link_to  'Add A Movie', new_movie_path %>
+
+<h2><%= link_to 'Add A Movie', new_movie_path %></h2>

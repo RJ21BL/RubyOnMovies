@@ -3,10 +3,10 @@ require 'rails_helper'
 describe MoviesController do
   describe '#index' do
     it 'shows a list of movies' do
-      movies = FactoryBot.create(:movie)
+      movies = FactoryBot.create_list(:movie, 5)
       get :index
 
-      expect(assigns(:movies)).to eq([movies])
+      expect(assigns(:movies)).to eq(movies)
     end
   end
 

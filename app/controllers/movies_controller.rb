@@ -5,26 +5,18 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-    # @director = @movie.director
-    # @genre = @movie.genre
   end
 
   def new
     @movie = Movie.new
-    @director = Director.new
-    @genre = Genre.new
+    # @director = Director.new
+    # @genre = Genre.new
   end
 
   def create
     @movie = Movie.new(movie_params)
 
-    if @movie.save
-      redirect_to root_path
-    elsif @director.save
-      redirect_to root_path
-    elsif @genre.save
-      redirect_to root_path
-    end
+    redirect_to root_path if @movie.save
   end
 
   def edit
@@ -50,6 +42,6 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :year, genre_attributes: [ :name ])
+    params.require(:movie).permit(:title, :year)
   end
 end
