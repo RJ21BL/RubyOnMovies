@@ -6,7 +6,7 @@ describe 'Movies', type: :request do
 
     expect(response).to be_successful
   end
-  
+
   it 'sends a get request to get the movies URL' do
     get '/movies'
 
@@ -17,8 +17,8 @@ describe 'Movies', type: :request do
     get '/movies/new'
 
     expect(response).to be_successful
-    
-    post '/movies', 
+
+    post '/movies',
       params: { movie: { title: 'Die Another Day', year: 2002 } }
     assert_response :redirect
     follow_redirect!
