@@ -13,17 +13,14 @@ describe 'Movies', type: :request do
     expect(response).to be_successful
   end
 
-  it 'creates a movie and redirects to the new URL' do
+  it 'renders the new path then redirects to the post path' do
     get '/movies/new'
 
-    expect(response).to be_successful
+    expect(response).to render_template('movies/new')
 
-    post '/movies',
-      params: { movie: { title: 'Die Another Day', year: 2002 } }
-    assert_response :redirect
-    follow_redirect!
-
-    expect(response).to be_successful
+    post '/movies', params: { movie: { title: 'Die Another Day', year: 2002 } }
+    
+    expect(response).to redirect_to('/')
   end
 
   it 'renders the edit path' do
