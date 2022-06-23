@@ -1,19 +1,13 @@
 require 'rails_helper'
 
 describe 'Movies', type: :request do
-  it 'sends a get request to get the root URL' do
+  it 'gets the index url' do
     get '/'
 
     expect(response).to be_successful
   end
 
-  it 'sends a get request to get the movies URL' do
-    get '/movies'
-
-    expect(response).to be_successful
-  end
-
-  it 'renders the new path then redirects to the post path' do
+  it 'renders the new template then redirects to the index' do
     get '/movies/new'
 
     expect(response).to render_template('movies/new')
@@ -23,14 +17,14 @@ describe 'Movies', type: :request do
     expect(response).to redirect_to('/')
   end
 
-  it 'renders the edit path' do
+  it 'renders the edit template' do
     movie = Movie.create(title: 'The Godfather', year: '1972')
     get "/movies/#{movie.id}/edit"
 
     expect(response).to render_template('movies/edit')
   end
 
-  it 'renders the show path' do
+  it 'renders the show template' do
     director = Director.create(id: 1, name: 'Peter Jackson')
     genre = Genre.create(id: 1, name: 'Adventure')
     movie = Movie.create(id: 1, title: 'The Felowship Of The Ring', year: 2001, director_id: 1, genre_id: 1)
