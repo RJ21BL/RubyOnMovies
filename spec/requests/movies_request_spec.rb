@@ -27,7 +27,7 @@ describe 'Movies', type: :request do
   end
 
   it 'renders the edit path' do
-    movie = Movie.create({title: 'The Godfather', year: '1972'})
+    movie = Movie.create({ title: 'The Godfather', year: '1972' })
     get "/movies/#{movie.id}/edit"
 
     expect(response).to render_template('movies/edit')
