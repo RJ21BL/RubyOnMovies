@@ -33,4 +33,24 @@ describe 'Movies', type: :request do
 
     expect(response).to render_template('movies/show')
   end
+  
+  describe '#create' do
+    it 'creates a movie' do
+    end
+  end
+
+  describe '#show' do
+    it 'show a movie' do
+    end
+  end
+
+  describe '#edit' do
+    it 'edits a movie' do
+    end
+  end
+
+  describe '#destroy' do
+    it 'deletes a movie' do
+    end
+  end
 end
