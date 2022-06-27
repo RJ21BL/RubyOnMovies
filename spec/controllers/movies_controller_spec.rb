@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe MoviesController do
+  let(:movie_factory) {FactoryBot.create(:movie)}
+
   describe '#index' do
     it 'shows a list of movies' do
       movies = FactoryBot.create_list(:movie, 5)
@@ -12,15 +14,14 @@ describe MoviesController do
 
   describe '#show' do
     it 'shows a movie with a title and year' do
-      movie = FactoryBot.create(:movie)
-      get :show, params: { id: movie.id }
+      get :show, params: { id: movie_factory.id }
 
-      expect(assigns(:movie)).to eq(movie)
+      expect(assigns(:movie)).to eq(movie_factory)
     end
   end
 
   describe '#create' do
-    it 'builds and saves a new movie' do
+    it 'creates a movie' do
     end
   end
 
