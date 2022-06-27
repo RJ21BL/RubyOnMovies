@@ -11,7 +11,11 @@ describe MoviesController do
   end
 
   describe '#show' do
-    it 'shows a movies title and year' do
+    it 'shows a movie with a title and year' do
+      movie = FactoryBot.create(:movie)
+      get :show, params: { id: movie.id }
+
+      expect(assigns(:movie)).to eq(movie)
     end
   end
 
