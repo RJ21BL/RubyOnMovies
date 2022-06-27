@@ -1,16 +1,16 @@
 <h1>Add Movies</h1>
 
-<%= form_for @movie do |movie| %>
-  <%= movie.label('Title') %>
-  <%= movie.text_field(:title) %>
+<%= form_for @movie do |f| %>
+  <%= f.label('Title') %>
+  <%= f.text_field(:title) %>
     <p>
-  <%= movie.label('Year') %>
-  <%= movie.text_field(:year) %>
+  <%= f.label('Year') %>
+  <%= f.text_field(:year) %>
     <p>
-  <%= movie.fields_for :directors do |movie|%>
-    <%= movie.label('Director') %>
-    <%= movie.text_field(:name) %>
+  <%= f.fields_for :directors do |d| %>
+    <%= d.label('Director') %>
+    <%= d.text_field(:name) %>
       <p>
-    <%= movie.submit('Add Movie')%>
+    <%= d.submit('Add Movie')%>
   <% end %> 
 <% end %> 

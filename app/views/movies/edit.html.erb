@@ -1,10 +1,10 @@
 <h1>Edit Movie</h1>
-<%= form_for @movie do |form| %>
-  <%= form.label('title') %>
-  <%= form.text_field(:title) %>
+<%= form_for @movie do |f| %>
+  <%= f.label('title') %>
+  <%= f.text_field(:title) %>
     <p>
-  <%= form.label('year') %>
-  <%= form.text_field(:year) %>
+  <%= f.label('year') %>
+  <%= f.text_field(:year) %>
     <p>
-  <%= form.submit('Edit Movie') %>
+  <%= f.submit('Edit Movie') %>
 <% end %>
