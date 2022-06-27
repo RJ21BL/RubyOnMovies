@@ -13,7 +13,7 @@ describe 'Movies', type: :request do
     expect(response).to render_template('movies/new')
 
     post '/movies', params: { movie: { title: 'Die Another Day', year: 2002 } }
-    
+
     expect(response).to redirect_to('/')
   end
 
@@ -33,7 +33,7 @@ describe 'Movies', type: :request do
 
     expect(response).to render_template('movies/show')
   end
-  
+
   describe '#create' do
     it 'creates a movie' do
     end
