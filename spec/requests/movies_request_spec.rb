@@ -17,7 +17,7 @@ describe 'Movies', type: :request do
   end
 
   it 'renders the new template then redirects to the index' do
-    get '/movies/new'director_factory
+    get '/movies/new'
 
     expect(response).to render_template('movies/new')
 
