@@ -22,6 +22,7 @@ describe MoviesController do
 
   describe '#create' do
     it 'creates a movie' do
+      expect { movie_factory }.to change { Movie.count }.from(0).to(1)
     end
   end
 
