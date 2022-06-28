@@ -1,10 +1,19 @@
 require 'rails_helper'
+require_relative 'shared_examples_movies'
 
 describe 'Movies', type: :request do
-  it 'gets the index url' do
-    get '/'
+  describe 'index' do
+    it 'renders the index template' do
+      get '/'
 
-    expect(response).to be_successful
+      expect(response).to render_template('index')
+    end
+
+    it 'renders the index template' do
+      get '/movies'
+
+      expect(response).to render_template('index')
+    end
   end
 
   it 'renders the new template then redirects to the index' do
@@ -27,30 +36,10 @@ describe 'Movies', type: :request do
   it 'renders the show template' do
     director = Director.create(id: 1, name: 'Peter Jackson')
     genre = Genre.create(id: 1, name: 'Adventure')
-    movie = Movie.create(id: 1, title: 'The Felowship Of The Ring', year: 2001, director_id: 1, genre_id: 1)
+    movie = Movie.create(title: 'The Felowship Of The Ring', year: 2001, director_id: 1, genre_id: 1)
 
     get "/movies/#{movie.id}"
 
     expect(response).to render_template('movies/show')
-  end
-
-  describe '#create' do
-    it 'creates a movie' do
-    end
-  end
-
-  describe '#show' do
-    it 'show a movie' do
-    end
-  end
-
-  describe '#edit' do
-    it 'edits a movie' do
-    end
-  end
-
-  describe '#destroy' do
-    it 'deletes a movie' do
-    end
   end
 end
