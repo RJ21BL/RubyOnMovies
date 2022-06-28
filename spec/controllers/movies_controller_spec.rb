@@ -35,4 +35,14 @@ describe MoviesController do
     it 'edits a movie' do
     end
   end
+
+  describe '#destroy' do
+    it 'destroys a move' do
+      movie_factory
+      
+      expect do
+        delete :destroy, params: { id: movie_factory.id }
+      end.to change { Movie.count }.by(-1)
+    end
+  end
 end
