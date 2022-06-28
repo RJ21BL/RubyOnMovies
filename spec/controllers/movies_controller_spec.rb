@@ -18,6 +18,13 @@ describe MoviesController do
 
       expect(assigns(:movie)).to eq(movie_factory)
     end
+
+    it 'returns an error when move has not been found' do
+      error_msg = 'Movie not found'
+      get :show, params: { id: 5 }
+
+      expect { assigns(:movie) }.to raise_error error_msg
+    end
   end
 
   describe '#create' do
