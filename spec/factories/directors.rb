@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :director do
-    name { 'JCVD'}
+    name { 'Mark DiSalle'}
   end
 end
