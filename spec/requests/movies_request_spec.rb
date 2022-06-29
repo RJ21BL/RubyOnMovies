@@ -36,7 +36,7 @@ describe 'Movies', type: :request do
   it 'renders the show template' do
     director = Director.create(id: 1, name: 'Peter Jackson')
     genre = Genre.create(id: 1, name: 'Adventure')
-    movie = Movie.create(title: 'The Felowship Of The Ring', year: 2001, director_id: 1, genre_id: 1)
+    movie = Movie.create(title: 'The Felowship Of The Ring', year: 2001, director_id: director.id, genre_id: genre.id)
 
     get "/movies/#{movie.id}"
 
