@@ -1,18 +1,20 @@
 require 'rails_helper'
 require_relative 'shared_examples_movies'
+require './spec/requests/support/movies_helper.rb'
+# require 'test_helpers'
 
 describe 'Movies', type: :request do
-  describe 'index' do
-    it 'renders the index template' do
-      get '/'
+  include MoviesHelper
 
-      expect(response).to render_template('index')
+  describe 'index' do
+    context 'GET /' do
+      let(:render_index_template) { get '/' }
+      it_behaves_like 'render index'
     end
 
-    it 'renders the index template' do
-      get '/movies'
-
-      expect(response).to render_template('index')
+    context 'GET /movies' do
+      let(:render_index_template) { get '/movies' }
+      it_behaves_like 'render index'
     end
   end
 
