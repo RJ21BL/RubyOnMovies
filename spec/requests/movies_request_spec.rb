@@ -8,13 +8,17 @@ describe 'Movies', type: :request do
 
   describe 'index' do
     context 'GET /' do
-      let(:render_index_template) { get '/' }
-      it_behaves_like 'render index'
+      it 'renders /' do
+        get '/'
+        render_index_template
+      end
     end
 
     context 'GET /movies' do
-      let(:render_index_template) { get '/movies' }
-      it_behaves_like 'render index'
+      it 'renders /movies' do
+        get '/movies'
+        render_index_template
+      end
     end
   end
 
