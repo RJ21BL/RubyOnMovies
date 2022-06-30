@@ -33,7 +33,7 @@ describe MoviesController do
   describe '#new' do
     it 'builds a new movie' do
       get :new
-      
+    
       expect(assigns(:movie)).to be_a_new(Movie)
     end
   end
@@ -41,7 +41,7 @@ describe MoviesController do
   describe '#edit' do
     it 'edits a movie' do
       put :update, params: { movie: { title: 'Kickboxer 3', year: 1991 }, id: movie_factory.id }
-  
+
       expect(movie_factory.reload.title).to eq('Kickboxer 3')
       expect(movie_factory.reload.year).to eq(1991)
     end
