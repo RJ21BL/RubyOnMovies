@@ -15,16 +15,13 @@ describe MoviesController do
   describe '#show' do
     it 'shows a movie with a title and year' do
       get :show, params: { id: movie_factory.id }
-
       expect(assigns(:movie)).to eq(movie_factory)
     end
 
-    it 'returns an error when move has not been found' do
+    it 'raises an error when movie has not been found' do
       error_msg = 'Movie not found'
-      get :show, params: { id: 5 }
-
-      expect { assigns(:movie) }.to raise_error error_msg
-    end
+      expect { get :show, params: { id: 1 } }.to raise_error error_msg
+    end 
   end
 
   describe '#create' do
@@ -53,7 +50,7 @@ describe MoviesController do
   describe '#destroy' do
     it 'destroys a move' do
       movie_factory
-      
+
       expect do
         delete :destroy, params: { id: movie_factory.id }
       end.to change { Movie.count }.by(-1)

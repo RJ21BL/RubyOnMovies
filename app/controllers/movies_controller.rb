@@ -5,9 +5,9 @@ class MoviesController < ApplicationController
 
   def show
     error_msg = 'Movie not found'
-    @movie = Movie.find(params[:id])
-    raise error_msg if @movie.nil?
-    
+    @movie = Movie.find(params[:id]) 
+  rescue ActiveRecord::RecordNotFound
+      raise error_msg if @movie.nil? 
   end
 
   def new
