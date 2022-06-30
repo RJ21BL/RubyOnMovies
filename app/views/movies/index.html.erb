@@ -1,13 +1,13 @@
+<center>
 <h1>Movies</h1>
 <% @movies.each do |movie| %>
   <%= movie.id %>
   <%= link_to movie.title, movie %>
-  <%= movie.year %>
-    </br>
-  <strong><%= link_to 'DELETE', movie, method: :delete, data: { confirm: 'Are you sure you want to delete this movie?' }  %> </strong>
-    </br>
-  <strong><%= link_to 'EDIT', edit_movie_path(movie) %></strong>
-    <p>
+  <%= movie.year %> </br>
+    <strong><%= link_to 'DELETE', movie, method: :delete, data: { confirm: 'Are you sure you want to delete this movie?' }  %> </strong>
+    <strong><%= link_to 'EDIT', edit_movie_path(movie) %></strong>
+      <p>
 <% end %>
 
 <h2><%= link_to 'Add A Movie', new_movie_path %></h2>
+</center>
