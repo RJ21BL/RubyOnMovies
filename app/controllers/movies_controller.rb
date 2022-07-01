@@ -2,10 +2,10 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
 
-    if params[:search].blank?
+    if params[:search_bar].blank?
       render :index
     else
-      @movie_id = Movie.where("title LIKE ?", "#{params[:search]}").first.id
+      @movie_id = Movie.where("title LIKE ?", "#{params[:search_bar]}").first.id
       redirect_to action: 'show', id: @movie_id
     end
   end
