@@ -34,74 +34,54 @@ Director.create!([
   {name: 'Oren Peli'}
 ])
 
-movie1 = Movie.find(1)
-movie1.director_id = 1
-movie1.save
-genre1 = Movie.find(1)
-genre1.genre_id = 1
-genre1.save
+movie_1 = Movie.find(1)
+movie_1.director_id = 1
+movie_1.genre_id = 1
+movie_1.save
 
-movie2 = Movie.find(2)
-movie2.director_id = 1
-movie2.save
-genre2 = Movie.find(2)
-genre2.genre_id = 1
-genre2.save
+movie_2 = Movie.find(2)
+movie_2.director_id = 1
+movie_2.genre_id = 1
+movie_2.save
 
-movie3 = Movie.find(3)
-movie3.director_id = 1
-movie3.save
-genre3 = Movie.find(3)
-genre3.genre_id = 1
-genre3.save
+movie_3 = Movie.find(3)
+movie_3.director_id = 1
+movie_3.genre_id = 1
+movie_3.save
 
-movie4 = Movie.find(4)
-movie4.director_id = 2
-movie4.save
-genre4 = Movie.find(4)
-genre4.genre_id = 2
-genre4.save
+movie_4 = Movie.find(4)
+movie_4.director_id = 2
+movie_4.genre_id = 2
+movie_4.save
 
-movie5 = Movie.find(5)
-movie5.director_id = 2
-movie5.save
-genre5 = Movie.find(5)
-genre5.genre_id = 2
-genre5.save
+movie_5 = Movie.find(5)
+movie_5.director_id = 2
+movie_5.genre_id = 2
+movie_5.save
 
-movie6 = Movie.find(6)
-movie6.director_id = 2
-movie6.save
-genre6 = Movie.find(6)
-genre6.genre_id = 2
-genre6.save
+movie_6 = Movie.find(6)
+movie_6.director_id = 2
+movie_6.genre_id = 2
+movie_6.save
 
-movie7 = Movie.find(7)
-movie7.director_id = 3
-movie7.save
-genre7 = Movie.find(7)
-genre7.genre_id = 3
-genre7.save
+movie_7 = Movie.find(7)
+movie_7.director_id = 3
+movie_7.genre_id = 3
+movie_7.save
 
-movie8 = Movie.find(8)
-movie8.director_id = 4
-movie8.save
-genre8 = Movie.find(8)
-genre8.genre_id = 3
-genre8.save
+movie_8 = Movie.find(8)
+movie_8.director_id = 4
+movie_8.genre_id = 3
+movie_8.save
 
-movie9 = Movie.find(9)
-movie9.director_id = 5
-movie9.save
-genre9 = Movie.find(9)
-genre9.genre_id = 4
-genre9.save
+movie_9 = Movie.find(9)
+movie_9.director_id = 5
+movie_9.genre_id = 4
+movie_9.save
 
-movie10 = Movie.find(10)
-movie10.director_id = 6
-movie10.save
-genre10 = Movie.find(10)
-genre10.genre_id = 5
-genre10.save
+movie_10 = Movie.find(10)
+movie_10.director_id = 6
+movie_10.genre_id = 5
+movie_10.save
 
 puts 'Seeding complete.'
