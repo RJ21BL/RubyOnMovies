@@ -71,49 +71,4 @@ inside_man.genres << genre_5
 inside_man.director_id = 6
 inside_man.save
 
-# movie_1 = Movie.find(1)
-# movie_1.director_id = 1
-# movie_1.genre_id = 1
-# movie_1.save
-
-# movie_2 = Movie.find(2)
-# movie_2.director_id = 1
-# movie_2.genre_id = 1
-# movie_2.save
-
-# movie_4 = Movie.find(4)
-# movie_4.director_id = 2
-# movie_4.genre_id = 2
-# movie_4.save
-
-# movie_5 = Movie.find(5)
-# movie_5.director_id = 2
-# movie_5.genre_id = 2
-# movie_5.save
-
-# movie_6 = Movie.find(6)
-# movie_6.director_id = 2
-# movie_6.genre_id = 2
-# movie_6.save
-
-# movie_7 = Movie.find(7)
-# movie_7.director_id = 3
-# movie_7.genre_id = 3
-# movie_7.save
-
-# movie_8 = Movie.find(8)
-# movie_8.director_id = 4
-# movie_8.genre_id = 3
-# movie_8.save
-
-# movie_9 = Movie.find(9)
-# movie_9.director_id = 5
-# movie_9.genre_id = 4
-# movie_9.save
-
-# movie_10 = Movie.find(10)
-# movie_10.director_id = 6
-# movie_10.genre_id = 5
-# movie_10.save
-
 puts 'Seeding complete.'
