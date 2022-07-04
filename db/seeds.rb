@@ -52,6 +52,7 @@ training_day = Movie.find(7)
 genre_3 = Genre.find(3)
 training_day.genres << genre_3
 training_day.director_id = 3
+training_day.save
 
 inside_man = Movie.find(8)
 genre_3 = Genre.find(3)
