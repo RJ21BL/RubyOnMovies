@@ -6,6 +6,11 @@
       <%= submit_tag("Search movie", name: nil) %>
 <% end %>
 
+<% @genres.each do |genre| %>
+  <%= link_to genre.name, movies_path %>
+  
+<% end %>
+
 </br>
 </br>
 </br>

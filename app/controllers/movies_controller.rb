@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all
+    @genres = Genre.all
 
     if params[:search_bar].blank?
       render :index
