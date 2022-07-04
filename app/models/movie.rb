@@ -1,4 +1,3 @@
 class Movie < ApplicationRecord
   belongs_to :director, optional: true
-  belongs_to :genre, optional: true
-end
+  has_and_belongs_to_many :genres, optional: true
