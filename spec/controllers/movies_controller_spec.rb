@@ -21,7 +21,7 @@ describe MoviesController do
     it 'raises an error when movie has not been found' do
       error_msg = 'Movie not found'
       expect { get :show, params: { id: 1 } }.to raise_error error_msg
-    end 
+    end
   end
 
   describe '#create' do
