@@ -1,7 +1,12 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
     @genres = Genre.all
+    
+    if params[:genre]
+      @movies = Movie.joins(:genres).where(genres: params[:genre])
+    else
+      @movies = Movie.all
+    end
 
     if params[:search_bar].blank?
       render :index

@@ -7,8 +7,7 @@
 <% end %>
 
 <% @genres.each do |genre| %>
-  <%= link_to genre.name, movies_path %>
-  
+  <%= link_to genre.name, movies_path(genre: genre) %>
 <% end %>
 
 </br>
