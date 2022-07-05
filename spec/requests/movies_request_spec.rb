@@ -4,6 +4,7 @@ require './spec/requests/support/movies_helper.rb'
 # require 'test_helpers'
 
 describe 'Movies', type: :request do
+  let(:movie_factory) {FactoryBot.create(:movie)}
   include MoviesHelper
 
   describe 'index' do
@@ -40,11 +41,7 @@ describe 'Movies', type: :request do
   end
 
   it 'renders the show template' do
-    director = Director.create(id: 1, name: 'Peter Jackson')
-    genre = Genre.create(id: 1, name: 'Adventure')
-    movie = Movie.create(title: 'The Felowship Of The Ring', year: 2001, director_id: director.id, genre_id: genre.id)
-
-    get "/movies/#{movie.id}"
+    get "/movies/#{movie_factory.id}"
 
     expect(response).to render_template('movies/show')
   end
