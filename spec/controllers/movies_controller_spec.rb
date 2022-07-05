@@ -33,7 +33,7 @@ describe MoviesController do
   describe '#new' do
     it 'builds a new movie' do
       get :new
-    
+
       expect(assigns(:movie)).to be_a_new(Movie)
     end
   end
