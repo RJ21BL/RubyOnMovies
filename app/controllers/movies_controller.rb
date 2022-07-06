@@ -11,8 +11,12 @@ class MoviesController < ApplicationController
     if params[:search_bar].blank?
       render :index
     else
-      @movie_id = Movie.where("title LIKE ?", "#{params[:search_bar]}").first.id
-      redirect_to action: 'show', id: @movie_id
+      if Movie.where("title LIKE ?", "#{params[:search_bar]}").first.nil?
+        @error_msg = 'Movie not found'
+      else
+        @movie_id = Movie.where("title LIKE ?", "#{params[:search_bar]}").first.id
+        redirect_to action: 'show', id: @movie_id
+      end
     end
   end
 
