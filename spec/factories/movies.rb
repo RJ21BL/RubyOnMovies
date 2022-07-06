@@ -3,7 +3,6 @@ FactoryBot.define do
     title { 'Kickboxer' }
     year  { 1990 }
     director
-    # genre
     genres { |g| [g.association(:genre)] }
   end
 end

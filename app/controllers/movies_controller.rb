@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   def index
     @genres = Genre.all
-    
+
     if params[:genre]
       @movies = Movie.joins(:genres).where(genres: params[:genre])
     else
